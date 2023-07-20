@@ -14,6 +14,6 @@ import { theme } from "@/store/theme";
 
 	font-size: 4vh;
 
-	font-weight: 450;
+	font-weight: 500;
 }
 </style>
