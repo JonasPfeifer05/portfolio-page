@@ -16,8 +16,8 @@
 </template>
 
 <script setup lang="ts">
-import { useScroll } from "@/composable/scroll";
-import { usePageSize } from "@/composable/pageSize";
+import { useScroll } from "../composable/scroll";
+import { usePageSize } from "../composable/pageSize";
 import { onMounted, type Ref, ref, watch } from "vue";
 import { theme } from "../store/theme";
 
@@ -67,6 +67,7 @@ function calcSections() {
 	];
 	console.log(sections);
 }
+
 onMounted(() => calcSections());
 
 watch(pageSize, () => calcSections());

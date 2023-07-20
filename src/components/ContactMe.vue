@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import SectionHeader from "@/components/SectionHeader.vue";
+import SectionHeader from "../components/SectionHeader.vue";
 import { ref } from "vue";
 import { theme } from "../store/theme";
 

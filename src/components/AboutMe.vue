@@ -52,7 +52,7 @@ import Story from "@/components/Story.vue";
 	background: url("@/assets/blob-1.svg#svgView(preserveAspectRatio(none))") center center no-repeat;
 	background-size: 30vw 50vh;
 	background-position-x: 85vw;
-	background-position-y: 0vh;
+	background-position-y: 0;
 }
 
 #portrait {
