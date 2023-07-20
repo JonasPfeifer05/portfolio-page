@@ -1,5 +1,3 @@
-@import "../../node_modules/bootstrap/scss/bootstrap";
-
 $bgPrimaryDark: #3A3A3A;
 $bgPrimaryLight: #FFFFFF;
 
@@ -12,11 +10,26 @@ $textColorLight: #000000;
 $menubarHeight: 80px;
 $pageSize: calc(100vh - $menubarHeight);
 
+:export {
+  pageHeight: $pageSize;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   padding: 0;
   margin: 0;
 
   overflow-x: hidden;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: $pageSize;
+  visibility: hidden;
 }
 
 .bgPrimaryDark {

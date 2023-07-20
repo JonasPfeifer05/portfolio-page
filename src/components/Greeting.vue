@@ -1,10 +1,10 @@
 <template>
   <div
-    id="content"
+    id="aboutMe"
     class="vw-100 d-flex align-items-center justify-content-center"
   >
     <pre
-      id="greeting"
+      id="greetingText"
       class="text-center"
       :class="theme.textColor()"
     >
@@ -23,14 +23,14 @@ import {theme} from "@/store/theme";
 <style scoped lang="scss">
 @import "@/assets/style";
 
-#content {
+#aboutMe {
   height: $pageSize;
 
   background: url("@/assets/wave-haikei.svg#svgView(preserveAspectRatio(none))") center center no-repeat;
   background-size: 100% 100%;
 }
 
-#greeting {
+#greetingText {
   font-size: 10vh;
 }
 </style>

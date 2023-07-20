@@ -1,77 +1,112 @@
 <template>
-  <div
-    id="menubar"
-    class="w-100 sticky-top d-flex justify-content-between p-3"
-    :class="theme.bgSecondary()"
-  >
-    <div
-      id="home"
-      class="d-flex align-items-center"
-      :class="theme.textColor()"
-    >
-      Home
-    </div>
-    <div
-      id="sections"
-      class="d-flex justify-content-between align-items-end gap-4"
-    >
-      <div
-        class="section"
-        :class="theme.textColor()"
-      >
-        About Me
-      </div>
-      <div
-        class="section"
-        :class="theme.textColor()"
-      >
-        What I do
-      </div>
-      <div
-        class="section"
-        :class="theme.textColor()"
-      >
-        Contact Me
-      </div>
-      <div
-        class="section"
-        :class="theme.textColor()"
-      >
-        Impress
-      </div>
-    </div>
-  </div>
+	<nav id="navbar" class="w-100 fixed-top d-flex justify-content-between p-3" :class="theme.bgSecondary()">
+		<div id="home" class="d-flex align-items-center" :class="theme.textColor()">Home</div>
+		<div id="sections" class="d-flex justify-content-between align-items-end gap-4">
+			<a
+				:href="section.anchor"
+				:key="section.name"
+				v-for="section of sections"
+				class="section nav-link"
+				:class="[theme.textColor(), scroll_y + pageSize * 0.8 > section.start && scroll_y + pageSize * 0.8 <= section.end ? 'active' : '']"
+			>
+				{{ section.name }}</a
+			>
+		</div>
+	</nav>
 </template>
 
-<script setup>
-import {theme} from "@/store/theme";
+<script setup lang="ts">
+import { useScroll } from "@/composable/scroll";
+import { usePageSize } from "@/composable/pageSize";
+import { onMounted, type Ref, ref, watch } from "vue";
+import { theme } from "../store/theme";
+
+const scroll_y = useScroll();
+
+const pageSize = usePageSize();
+
+const sections: Ref<
+	{
+		name: string;
+		anchor: string;
+		start: number;
+		end: number;
+	}[]
+> = ref([]);
+
+setInterval(() => {
+	console.log(sections);
+}, 1000);
+
+function calcSections() {
+	sections.value = [
+		{
+			name: "About Me",
+			anchor: "#aboutMeAnchor",
+			start: pageSize.value * 1,
+			end: pageSize.value * 2,
+		},
+		{
+			name: "What I Do",
+			anchor: "#whatIDoAnchor",
+			start: pageSize.value * 2,
+			end: pageSize.value * 3,
+		},
+		{
+			name: "Contact Me",
+			anchor: "#contactMeAnchor",
+			start: pageSize.value * 3,
+			end: pageSize.value * 4,
+		},
+		{
+			name: "Impress",
+			anchor: "#impressAnchor",
+			start: pageSize.value * 4,
+			end: pageSize.value * 5,
+		},
+	];
+	console.log(sections);
+}
+onMounted(() => calcSections());
+
+watch(pageSize, () => calcSections());
 </script>
 
 <style scoped lang="scss">
 @import "@/assets/style";
-#menubar {
-  height: $menubarHeight;
+
+#navbar {
+	height: $menubarHeight;
 }
 
 #home {
-  font-size: 40px;
+	font-size: 40px;
 
-  font-weight: bold;
+	font-weight: bold;
 
-  cursor: pointer;
+	cursor: pointer;
 
-  &:hover {
-    text-decoration: underline;
-  }
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 .section {
-  font-size: 22px;
+	font-size: 22px;
 
-  cursor: pointer;
+	cursor: pointer;
 
-  &:hover {
-    text-decoration: underline;
-  }
+	padding: 5px 15px;
+
+	border-radius: 10px;
+	transition-duration: 500ms;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.active {
+	background: #0066ff;
 }
 </style>
