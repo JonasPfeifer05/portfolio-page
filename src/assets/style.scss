@@ -9,6 +9,9 @@ $bgSecondaryLight: #EEEEEE;
 $textColorDark: #FFFFFF;
 $textColorLight: #000000;
 
+$menubarHeight: 80px;
+$pageSize: calc(100vh - $menubarHeight);
+
 body {
   padding: 0;
   margin: 0;
@@ -17,25 +20,25 @@ body {
 }
 
 .bgPrimaryDark {
-  background: $bgPrimaryDark;
+  background: $bgPrimaryDark !important;
 }
 
 .bgPrimaryLight {
-  background: $bgPrimaryLight;
+  background: $bgPrimaryLight !important;
 }
 
 .bgSecondaryDark {
-  background: $bgSecondaryDark;
+  background: $bgSecondaryDark !important;
 }
 
 .bgSecondaryLight {
-  background: $bgSecondaryLight;
+  background: $bgSecondaryLight !important;
 }
 
 .textColorDark {
-  color: $textColorDark;
+  color: $textColorDark !important;
 }
 
 .textColorLight {
-  color: $textColorLight;
+  color: $textColorLight !important;
 }
