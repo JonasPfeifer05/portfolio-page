@@ -1,0 +1,41 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+$bgPrimaryDark: #3A3A3A;
+$bgPrimaryLight: #FFFFFF;
+
+$bgSecondaryDark: #313131;
+$bgSecondaryLight: #EEEEEE;
+
+$textColorDark: #FFFFFF;
+$textColorLight: #000000;
+
+body {
+  padding: 0;
+  margin: 0;
+
+  overflow-x: hidden;
+}
+
+.bgPrimaryDark {
+  background: $bgPrimaryDark;
+}
+
+.bgPrimaryLight {
+  background: $bgPrimaryLight;
+}
+
+.bgSecondaryDark {
+  background: $bgSecondaryDark;
+}
+
+.bgSecondaryLight {
+  background: $bgSecondaryLight;
+}
+
+.textColorDark {
+  color: $textColorDark;
+}
+
+.textColorLight {
+  color: $textColorLight;
+}
