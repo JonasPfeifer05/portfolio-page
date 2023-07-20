@@ -10,10 +10,6 @@ $textColorLight: #000000;
 $menubarHeight: 80px;
 $pageSize: calc(100vh - $menubarHeight);
 
-:export {
-  pageHeight: $pageSize;
-}
-
 *::-webkit-scrollbar {
   display: none;
 }
@@ -28,7 +24,14 @@ body {
 .anchor {
   display: block;
   position: relative;
-  top: $pageSize;
+  top: -$menubarHeight;
+  visibility: hidden;
+}
+
+#greeting-anchor {
+  display: block;
+  position: relative;
+  top: -$menubarHeight;
   visibility: hidden;
 }
 

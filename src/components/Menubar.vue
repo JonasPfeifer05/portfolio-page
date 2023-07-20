@@ -1,6 +1,6 @@
 <template>
 	<nav id="navbar" class="w-100 fixed-top d-flex justify-content-between p-3" :class="theme.bgSecondary()">
-		<div id="home" class="d-flex align-items-center" :class="theme.textColor()">Home</div>
+		<a id="home" class="d-flex align-items-center nav-link" :class="theme.textColor()" href="#greetingAnchor">Home</a>
 		<div id="sections" class="d-flex justify-content-between align-items-end gap-4">
 			<a
 				:href="section.anchor"

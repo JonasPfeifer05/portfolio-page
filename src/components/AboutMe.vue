@@ -1,6 +1,6 @@
 <template>
-	<div id="aboutMeAnchor" class="anchor" />
-	<div id="aboutMe" class="w-100" ref="aboutMe">
+	<div id="aboutMeAnchor" class="anchor"></div>
+	<div id="aboutMe" class="w-100">
 		<div id="blob-1" class="w-100 h-100">
 			<section-header>
 				About Me
@@ -32,7 +32,6 @@
 </template>
 
 <script setup>
-import { theme } from "@/store/theme";
 import SectionHeader from "@/components/SectionHeader.vue";
 import Story from "@/components/Story.vue";
 </script>
