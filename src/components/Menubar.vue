@@ -54,12 +54,6 @@ function calcSections() {
 			start: pageSize.value * 5 + pageSize.value * 0.2,
 			end: pageSize.value * 6 + pageSize.value * 0.2,
 		},
-		{
-			name: "Impress",
-			anchor: "#impressAnchor",
-			start: pageSize.value * 6 + pageSize.value * 0.2,
-			end: pageSize.value * 7 + pageSize.value * 0.2,
-		},
 	];
 }
 
