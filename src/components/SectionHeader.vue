@@ -9,8 +9,9 @@ import { theme } from "@/store/theme";
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/style.scss";
 #header {
-	height: 20%;
+	height: calc($pageSize * 0.2);
 
 	font-size: 4vh;
 

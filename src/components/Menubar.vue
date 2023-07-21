@@ -34,10 +34,6 @@ const sections: Ref<
 	}[]
 > = ref([]);
 
-setInterval(() => {
-	console.log(sections);
-}, 1000);
-
 function calcSections() {
 	sections.value = [
 		{
@@ -50,22 +46,21 @@ function calcSections() {
 			name: "What I Do",
 			anchor: "#whatIDoAnchor",
 			start: pageSize.value * 2,
-			end: pageSize.value * 3,
+			end: pageSize.value * 5 + pageSize.value * 0.2,
 		},
 		{
 			name: "Contact Me",
 			anchor: "#contactMeAnchor",
-			start: pageSize.value * 3,
-			end: pageSize.value * 4,
+			start: pageSize.value * 5 + pageSize.value * 0.2,
+			end: pageSize.value * 6 + pageSize.value * 0.2,
 		},
 		{
 			name: "Impress",
 			anchor: "#impressAnchor",
-			start: pageSize.value * 4,
-			end: pageSize.value * 5,
+			start: pageSize.value * 6 + pageSize.value * 0.2,
+			end: pageSize.value * 7 + pageSize.value * 0.2,
 		},
 	];
-	console.log(sections);
 }
 
 onMounted(() => calcSections());
