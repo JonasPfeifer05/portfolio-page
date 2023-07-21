@@ -56,9 +56,8 @@ import Story from "@/components/Story.vue";
 }
 
 #portrait {
-	width: 150px;
-	height: 150px;
-
+	width: 15vh;
+	aspect-ratio: 1;
 	border-radius: 50%;
 }
 

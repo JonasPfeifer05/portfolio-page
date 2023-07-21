@@ -1,7 +1,9 @@
-import { onMounted, ref } from "vue";
+import { onMounted, onUnmounted, reactive } from "vue";
 
 export function usePageSize() {
-	const pageSize = ref(0);
+	const pageSize = reactive({
+		value: 0,
+	});
 
 	function update() {
 		pageSize.value = window.innerHeight - 80;
@@ -10,7 +12,7 @@ export function usePageSize() {
 	update();
 
 	onMounted(() => window.addEventListener("resize", update));
-	onMounted(() => window.removeEventListener("resize", update));
+	onUnmounted(() => window.removeEventListener("resize", update));
 
 	return pageSize;
 }

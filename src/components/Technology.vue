@@ -38,7 +38,7 @@ const props = defineProps<Props>();
 
 .icon {
 	img {
-		width: 250px;
+		height: 20vh;
 		aspect-ratio: 1;
 
 		border-radius: 50%;

@@ -7,7 +7,7 @@
 				:key="section.name"
 				v-for="section of sections"
 				class="section nav-link"
-				:class="[theme.textColor(), scroll_y + pageSize * 0.8 > section.start && scroll_y + pageSize * 0.8 <= section.end ? 'active' : '']"
+				:class="[theme.textColor(), scroll_y + pageSize.value * 0.8 > section.start && scroll_y + pageSize.value * 0.8 <= section.end ? 'active' : '']"
 			>
 				{{ section.name }}</a
 			>
@@ -55,11 +55,14 @@ function calcSections() {
 			end: pageSize.value * 6 + pageSize.value * 0.2,
 		},
 	];
+	console.log(sections);
 }
 
 onMounted(() => calcSections());
 
-watch(pageSize, () => calcSections());
+watch(pageSize, () => {
+	calcSections();
+});
 </script>
 
 <style scoped lang="scss">
